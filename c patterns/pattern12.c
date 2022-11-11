@@ -8,7 +8,7 @@ int main(void){
     k = -1*(n-1);
     for ( i = 1; i < 2*n; i++){
         for( j=1; j<= n; j++){
-            if(j <= -1*k +1 || j<=k+1){
+            if(j +k <=  +1 || j<=k+1){
                 printf("* ");
             }
             else{

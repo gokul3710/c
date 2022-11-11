@@ -2,18 +2,18 @@
 #include<stdlib.h>
 
 int main(void) {
-    int array1[100],array2[100];
+    int arr[100];
     int i,j,limit,count=0,flag=0,dup,sum =0;
     printf("enter the limit of array\n");
     scanf("%d",&limit);
     printf("enter %d values of array\n",limit);
     for(i=0;i<limit;i++){
-        scanf("%d",&array1[i]);
+        scanf("%d",&arr[i]);
     }
 
     for(i=0;i<limit;i++){
-        if(array1[i] < 7){
-            if(array1[i] == 2|| array1[i]==3 || array1[i]==5){
+        if(arr[i] < 7){
+            if(arr[i] == 2|| arr[i]==3 || arr[i]==5){
                 count=count +1;
             }
         }
@@ -21,9 +21,9 @@ int main(void) {
 
     if(count>=2){
         for(i=0;i<limit;i++){
-            if(array1[i] >= 7){
-                for(j=2;j<=array1[i]/2;j++){
-                    if(array1[i]%j == 0  ){
+            if(arr[i] >= 7){
+                for(j=2;j<=arr[i]/2;j++){
+                    if(arr[i]%j == 0  ){
                         flag = 1;
                         break;
                     }
@@ -32,13 +32,13 @@ int main(void) {
                 if(flag == 0){
                     dup = 0;
                     for(j=0;j<limit;j++){
-                        if(array1[i]== array1[j]){
+                        if(arr[i]== arr[j]){
                             dup = dup+1;
                         }
                         
                     }
                     if(dup >=2){
-                        array1[i] = 0;
+                        arr[i] = 0;
                     }
                 }
             }
@@ -46,7 +46,7 @@ int main(void) {
     }
 
     for(i=0;i<limit;i++){
-        sum = sum + array1[i];
+        sum = sum + arr[i];
     }
 
     printf("sum of the new array is %d :",sum);
@@ -54,7 +54,7 @@ int main(void) {
     printf("the new array is : ");
 
     for(i=0;i<limit;i++){
-        printf("%d\t",array1[i]);
+        printf("%d\t",arr[i]);
     }
 
     return EXIT_SUCCESS;

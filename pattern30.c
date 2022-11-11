@@ -2,10 +2,12 @@
 #include <stdlib.h>
 
 int main(void){
-    int i,j;
-    for(i=1;i<=3;i++){
-        for(j=1;j<12;j++){
-            if( j==i ||j+i==8 || i==2 && j==4){
+    int row,col;
+    for ( row = 1; row <= 9; row++)
+    {
+        for (col = 1; col <= 9; col++)
+        {
+            if(row == col + 4 || row + col == 14 || row + col == 6 || col == row + 4){
                 printf("* ");
             }
             else{
@@ -14,5 +16,6 @@ int main(void){
         }
         printf("\n");
     }
+    
     return EXIT_SUCCESS;
 }
